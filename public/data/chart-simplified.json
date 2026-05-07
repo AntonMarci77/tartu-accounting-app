@@ -1,0 +1,182 @@
+[
+  {
+    "code": "A1",
+    "name": "Intangible Assets",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "A2",
+    "name": "Tangible Assets (PP&E)",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "A3",
+    "name": "Accumulated Depreciation",
+    "category": "asset",
+    "normal": "C"
+  },
+  {
+    "code": "A5",
+    "name": "Inventories",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "A6",
+    "name": "Trade Receivables",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "A7",
+    "name": "Other Receivables",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "A8",
+    "name": "Cash & Bank Accounts",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "A9",
+    "name": "Prepaid Expenses",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "E1",
+    "name": "Share Capital",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "E2",
+    "name": "Reserves & Funds",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "E3",
+    "name": "Retained Earnings",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "E4",
+    "name": "Profit / Loss Current Period",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "L1",
+    "name": "Long-term Bank Loans",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "L2",
+    "name": "Other Long-term Liabilities",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "L3",
+    "name": "Short-term Bank Loans",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "L4",
+    "name": "Trade Payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "L5",
+    "name": "Tax Liabilities",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "L6",
+    "name": "Payroll & Social Security",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "L7",
+    "name": "Other Current Liabilities",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "R1",
+    "name": "Sales Revenue",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "R2",
+    "name": "Other Operating Income",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "R3",
+    "name": "Financial Income",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "X1",
+    "name": "Cost of Materials & Goods",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "X2",
+    "name": "Services & External Costs",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "X3",
+    "name": "Personnel Costs",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "X4",
+    "name": "Depreciation",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "X5",
+    "name": "Taxes & Fees",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "X6",
+    "name": "Other Operating Expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "X7",
+    "name": "Financial Expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "X8",
+    "name": "Income Tax Expense",
+    "category": "expense",
+    "normal": "D"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "lecture-10-transactions",
+    "title": "Lecture practice — 10 transactions",
+    "description": "The ten transactions from the Accounting 101 lecture (slide 59). Description and amount are provided; you fill in debit and credit.",
+    "chart": "simplified",
+    "file": "lecture-10-transactions.csv",
+    "blanks": ["debit", "credit"]
+  },
+  {
+    "id": "lecture-10-transactions-solution",
+    "title": "Lecture practice — solution",
+    "description": "Reference solution for the ten lecture transactions (using the simplified chart of accounts).",
+    "chart": "simplified",
+    "file": "lecture-10-transactions-solution.csv",
+    "blanks": []
+  },
+  {
+    "id": "intro-3-transactions",
+    "title": "First steps — 3 transactions",
+    "description": "Three very first transactions for the super-simplified chart (AN/AC/EQ/LC/LN/RE/EX). A gentle warm-up.",
+    "chart": "super",
+    "file": "intro-3-transactions.csv",
+    "blanks": ["debit", "credit"]
+  },
+  {
+    "id": "intro-3-transactions-solution",
+    "title": "First steps — solution",
+    "description": "Reference solution for the three warm-up transactions on the super-simplified chart.",
+    "chart": "super",
+    "file": "intro-3-transactions-solution.csv",
+    "blanks": []
+  }
+]

@@ -1,0 +1,1772 @@
+[
+  {
+    "code": "1010",
+    "name": "Cash on hand",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1020",
+    "name": "Settlement accounts",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1030",
+    "name": "Deposit accounts",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1040",
+    "name": "Deposits in highly liquid funds",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1050",
+    "name": "Cash transit",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1100",
+    "name": "Current financial investments",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1210",
+    "name": "Accounts receivables",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1290",
+    "name": "Allowance for doubtful receivables",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1310",
+    "name": "Receivables from parent company and other companies in the group",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1320",
+    "name": "Receivables from related undertakings",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1330",
+    "name": "Receivables from owners",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1340",
+    "name": "Other current receivables",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1350",
+    "name": "Internal receivables",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1360",
+    "name": "Settlements with reporting persons",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1410",
+    "name": "Loan receivables",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1420",
+    "name": "Interest receivables",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1430",
+    "name": "Dividend receivables",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1440",
+    "name": "Accrued income",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1510",
+    "name": "Input VAT",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1511",
+    "name": "Excise",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1515",
+    "name": "VAT prepayment",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1516",
+    "name": "ETCB's prepayment account",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1517",
+    "name": "VAT calculated in reverse charge procedure",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1518",
+    "name": "ETCB's collateral account",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1520",
+    "name": "Deferred expenses",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1530",
+    "name": "Prepayments to suppliers",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1610",
+    "name": "Raw materials",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1615",
+    "name": "Pledge packages",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1620",
+    "name": "Work in progress",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1630",
+    "name": "Finished goods",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1640",
+    "name": "Merchandise",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1641",
+    "name": "Merchandise from EU",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1650",
+    "name": "Inventory prepayments",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1670",
+    "name": "Mature consumable biological assets (Inventories)",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1680",
+    "name": "Immature consumable biological assets (Inventories)",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1710",
+    "name": "Shares of subsidiaries",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1730",
+    "name": "Shares of associates",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1750",
+    "name": "Other shares and securities",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1752",
+    "name": "Long-term receivables from parent company and other companies in the group",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1754",
+    "name": "Long-term receivables from related undertakings",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1760",
+    "name": "Miscellaneous long-term receivables",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1800",
+    "name": "Investment property",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1805",
+    "name": "Land",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1810",
+    "name": "Building",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1820",
+    "name": "Machinery and equipment",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1830",
+    "name": "Other property, plant and equipment",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1840",
+    "name": "Depreciation of investment property",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1841",
+    "name": "Accumulated depreciation of buildings",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1842",
+    "name": "Accumulated depreciation of machinery and equipment",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1843",
+    "name": "Accumulated depreciation of other fixed assets",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1850",
+    "name": "Unfinished projects",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1855",
+    "name": "Accumulated depreciation of unfinished projects",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1860",
+    "name": "Prepayments for material fixed assets",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1870",
+    "name": "Mature producing biological assets",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1880",
+    "name": "Immature producing biological assets",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1910",
+    "name": "Goodwill",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1920",
+    "name": "Development expenditures",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1930",
+    "name": "Computer software",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1940",
+    "name": "Concessions, patents, licences, trademarks",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1950",
+    "name": "Other intangible assets",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1960",
+    "name": "Unfinished projects and prepayments",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1970",
+    "name": "Accumulated depreciation of goodwill",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1971",
+    "name": "Accumulated depreciation of development expenses",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1972",
+    "name": "Accumulated depreciation of computer software",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1973",
+    "name": "Accumulated depreciation of concession, patents, licences and trademarks",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "1974",
+    "name": "Accumulated depreciation of other intangible assets",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "2110",
+    "name": "Current loans and bonds",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2120",
+    "name": "Long-term debt repayments in the next period",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2130",
+    "name": "Long-term financial lease repayments in the next period",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2140",
+    "name": "Convertible debt",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2210",
+    "name": "Customer prepayments",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2310",
+    "name": "Trade payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2410",
+    "name": "Payables to parent company and other companies in the group",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2420",
+    "name": "Payables to related undertakings",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2430",
+    "name": "Other current payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2510",
+    "name": "VAT payable (VAT savings account)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2511",
+    "name": "VAT upon sale (full rate)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2512",
+    "name": "VAT EU (full rate)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2513",
+    "name": "VAT upon sale (reduced rate)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2514",
+    "name": "VAT EU (reduced rate)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2515",
+    "name": "VAT payable from imports (VAT Directive, Section 4.1)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2516",
+    "name": "Excise tax payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2517",
+    "name": "VAT upon sale (reduced rate 5%)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2518",
+    "name": "VAT EU (reduced rate 5%)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2519",
+    "name": "VAT interest payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2520",
+    "name": "Personal income tax payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2521",
+    "name": "Accrued personal income tax payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2529",
+    "name": "Personal income tax interest payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2530",
+    "name": "Unemployment insurance tax payable (worker)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2531",
+    "name": "Accrued unemployment insurance tax payable (worker)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2532",
+    "name": "Unemployment insurance tax payable (employer)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2533",
+    "name": "Accrued enemployment insurance tax payable (employer)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2539",
+    "name": "Unemployment insurance tax interest payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2540",
+    "name": "Funded pension payments",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2541",
+    "name": "Accrued funded pension payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2549",
+    "name": "Funded pension tax interest payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2550",
+    "name": "Social tax payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2551",
+    "name": "Accrued social tax payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2559",
+    "name": "Social tax interest payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2560",
+    "name": "Income tax up to 99, except fringe benefit",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2565",
+    "name": "Fringe benefit income tax",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2569",
+    "name": "Income tax up to 99, except fringe benefit interest payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2570",
+    "name": "Income tax since 2000 and fringe benefit income tax",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2579",
+    "name": "Income tax since 2000 and fringe benefit income tax interest payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2580",
+    "name": "Land tax",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2589",
+    "name": "Land tax interest payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2590",
+    "name": "Other taxes",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2591",
+    "name": "VAT upon sale (reduced rate 13%)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2592",
+    "name": "VAT EU (reduced rate 13%)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2610",
+    "name": "Employee payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2611",
+    "name": "Wage interim account",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2612",
+    "name": "Holiday reserve",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2620",
+    "name": "Deductions from wages, interim account",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2650",
+    "name": "Dividend payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2655",
+    "name": "Accrued dividend income tax payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2656",
+    "name": "Dividend income tax payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2657",
+    "name": "Dividend income tax interest payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2660",
+    "name": "Interest payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2690",
+    "name": "Other accrued expenses",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2691",
+    "name": "Other accrued wage payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2695",
+    "name": "Prepayments of deferred income",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2710",
+    "name": "Current provisions",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2750",
+    "name": "Grants (current)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2810",
+    "name": "Non-current loans",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2820",
+    "name": "Non-current bonds",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2830",
+    "name": "Long-term financial lease obligations",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2840",
+    "name": "Long-term convertible debt",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2850",
+    "name": "Long-term payables to parent company and other companies in the group",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2860",
+    "name": "Long-term payables to related undertakings",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2870",
+    "name": "Other long-term payables",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2880",
+    "name": "Other long-term appropriations",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2890",
+    "name": "Pension appropriations",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2895",
+    "name": "Grants (non-current)",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "2900",
+    "name": "Issued capital",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "2910",
+    "name": "Unregistred equity",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "2920",
+    "name": "Share premium",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "2930",
+    "name": "Treasury shares",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "2940",
+    "name": "Statutory reserv capital",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "2941",
+    "name": "Other reserves",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "2950",
+    "name": "Unpaid capital",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "2955",
+    "name": "Other equity",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "2960",
+    "name": "Retained earnings (loss)",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "2970",
+    "name": "Annual period profit (loss)",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "3000",
+    "name": "Interim account for sales of fixed assets",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3100",
+    "name": "Sales of goods in Estonia (full rate)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3140",
+    "name": "Sales of goods in Estonia (KMS 41 special)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3150",
+    "name": "Sales of goods in Estonia (KMS 41¹ special, full rate)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3200",
+    "name": "Sales of services in Estonia (full rate)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3300",
+    "name": "Sales in Estonia (reduced rate)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3400",
+    "name": "VAT free turnover",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3500",
+    "name": "0% turnover (excluded from VD declaration)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3510",
+    "name": "Sales of goods in EU (VAT 0%)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3520",
+    "name": "Sales of services in EU (VAT 0%)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3530",
+    "name": "Sales in EU (full rate)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3540",
+    "name": "Services in EU (full rate)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3550",
+    "name": "Sales of goods in EU (reduced rate)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3560",
+    "name": "Sales of services in EU (reduced rate)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3610",
+    "name": "Export of goods (VAT 0%)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3620",
+    "name": "Export of services (VAT 0%)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3810",
+    "name": "Income from sales related to non-principal activities (full rate)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3820",
+    "name": "Profit from sale of asset",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3830",
+    "name": "Profit from fair value change of investment property",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3840",
+    "name": "Profit from exchange rate differences",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3850",
+    "name": "Lease income",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3855",
+    "name": "Accommodation services (reduced rate)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3860",
+    "name": "Fines, penalties and compensations",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3870",
+    "name": "Revenue from grants",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3880",
+    "name": "Work performed by entity and capitalised",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3900",
+    "name": "Dividends received",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3910",
+    "name": "Changes in inventories of finished goods and work in progress",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3920",
+    "name": "Changes in inventories of biological assets",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3950",
+    "name": "Profit (loss) from biological assets",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "3990",
+    "name": "Other operating income",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "4000",
+    "name": "Raw materials",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4010",
+    "name": "Inventory write-off",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4100",
+    "name": "Goods purchased for resale",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4110",
+    "name": "Goods purchased from EU",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4120",
+    "name": "Investment property purchased for resale",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4130",
+    "name": "Services purchased for resale",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4140",
+    "name": "Services purchased from EU",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4210",
+    "name": "Electricity",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4220",
+    "name": "Heat energy",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4230",
+    "name": "Fuel",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4300",
+    "name": "Subcontracting work",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4400",
+    "name": "Transportation expense",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4500",
+    "name": "Logistics expense",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4600",
+    "name": "Land rent",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4700",
+    "name": "Leases",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4800",
+    "name": "Expenses for other goods, commodities, materials and services",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "4900",
+    "name": "Acquisition of services (subject to VAT)",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5010",
+    "name": "Land rent",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5020",
+    "name": "Leases",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5031",
+    "name": "Electricity (Miscellaneous operating expenses)",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5032",
+    "name": "Heat energy (Miscellaneous operating expenses)",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5033",
+    "name": "Fuel (Miscellaneous operating expenses)",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5040",
+    "name": "Miscellaneous office expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5050",
+    "name": "Exploration and development expense",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5110",
+    "name": "Office supplies, postage costs",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5120",
+    "name": "Low-value equipment",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5130",
+    "name": "Equipment maintenance and repairs",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5140",
+    "name": "Computer and network maintenance",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5150",
+    "name": "Information and educational materials",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5210",
+    "name": "Telephone expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5230",
+    "name": "Internet",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5240",
+    "name": "Insurance",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5310",
+    "name": "Bank services",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5320",
+    "name": "Legal costs, commissions",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5330",
+    "name": "State and local taxes",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5331",
+    "name": "State fee",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5340",
+    "name": "Consultation expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5350",
+    "name": "Accounting services",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5355",
+    "name": "Audit/Review costs",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5360",
+    "name": "Certification expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5410",
+    "name": "Advertising expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5510",
+    "name": "Car fuel",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5520",
+    "name": "Car maintenance and repairs",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5530",
+    "name": "Vehicle insurance",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5535",
+    "name": "Vehicle mainenance expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5540",
+    "name": "Compensation for using a personal car",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5550",
+    "name": "Car rental",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5560",
+    "name": "Machinery and equipment rental",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5610",
+    "name": "Travel expense",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5620",
+    "name": "Training expense",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5630",
+    "name": "Industrial health and safety",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5635",
+    "name": "Sports and health Expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5640",
+    "name": "Fringe benefits",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5645",
+    "name": "VAT expense",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5650",
+    "name": "Income tax on fringe benefits",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5660",
+    "name": "Social tax on fringe benefits",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5710",
+    "name": "Transportation and postage expenses on sale",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5810",
+    "name": "Hospitality expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5820",
+    "name": "Income tax on hospitality expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5830",
+    "name": "Income tax on non-business-related expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5840",
+    "name": "Income tax from gifts",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5850",
+    "name": "Income tax on special cases",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5910",
+    "name": "Doubtful receivables",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5920",
+    "name": "Irrevocable receivables",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5930",
+    "name": "Provisions related expense",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "5990",
+    "name": "Other miscellaneous operating expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "6010",
+    "name": "Wage and salary expense",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "6020",
+    "name": "Social security taxes",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "6030",
+    "name": "Pension expense",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "6040",
+    "name": "Unemployment insurance expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7010",
+    "name": "Depreciation of investment property",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7020",
+    "name": "Depreciation of buildings",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7030",
+    "name": "Depreciation of machinery and equipment",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7040",
+    "name": "Depreciation of other fixed assets",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7050",
+    "name": "Depreciation of unfinished projects",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7070",
+    "name": "Depreciation of goodwill",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7071",
+    "name": "Depreciation of development expenditure",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7072",
+    "name": "Depreciation of computer software",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7073",
+    "name": "Depreciation of concession, patents, licences and trademarks",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7074",
+    "name": "Depreciation of other intangible fixed assets",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7100",
+    "name": "Loss from sales of fixed assets",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7105",
+    "name": "Loss from write-off of fixed assets",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7110",
+    "name": "Loss from sale of investment property",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7115",
+    "name": "Loss from change in the fair value of investment properties",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7200",
+    "name": "Non-business-related expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7210",
+    "name": "Interest to Tax Board",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7230",
+    "name": "Gifts and donations",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7310",
+    "name": "Foreign exchange loss",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7410",
+    "name": "Land tax expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7510",
+    "name": "Union membership fees",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7610",
+    "name": "Expenses for fines and penalties",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7910",
+    "name": "Other operating expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "7920",
+    "name": "Rounding differences",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8000",
+    "name": "Financial income from stocks and shares of subsidiaries",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8010",
+    "name": "Financial expense from stocks and shares of subsidiaries",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8100",
+    "name": "Financial income from stocks and shares of related undertakings",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8110",
+    "name": "Financial expense from stocks and shares of related undertakings",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8310",
+    "name": "Income from revaluation of bonds",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8315",
+    "name": "Expense from revaluation of bonds",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8320",
+    "name": "Income from revaluation of fund units",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8325",
+    "name": "Expense from revaluation of fund units",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8330",
+    "name": "Income from stocks and shares",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8335",
+    "name": "Expense from stocks and shares",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8400",
+    "name": "Interest income from deposits",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8401",
+    "name": "Interest income from bonds",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8402",
+    "name": "Interest income from loans",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8403",
+    "name": "Interest income from finance lease",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8409",
+    "name": "Other interest income",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8410",
+    "name": "Interest expense from bonds",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8411",
+    "name": "Interest expense from loans",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8412",
+    "name": "Interest expense from finance lease",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8413",
+    "name": "Other interest expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8500",
+    "name": "Profit (loss) from exchange rate differences",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8600",
+    "name": "Other financial income",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8610",
+    "name": "Other financial expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8700",
+    "name": "Extraordinary items income",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "8800",
+    "name": "Extraordinary items expenses",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "8888",
+    "name": "Settlement of accounts",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "8900",
+    "name": "Income tax expense",
+    "category": "expense",
+    "normal": "D"
+  },
+  {
+    "code": "9000",
+    "name": "Calculated aggregate result",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "9100",
+    "name": "Töötukassa hüvitised, tasutakse otse töötajale, ei kajastu raamatupidamises",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "9500",
+    "name": "Receivables and liabilities interim account",
+    "category": "asset",
+    "normal": "D"
+  }
+]

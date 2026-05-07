@@ -1,0 +1,44 @@
+[
+  {
+    "code": "AN",
+    "name": "Non-current Assets",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "AC",
+    "name": "Current Assets",
+    "category": "asset",
+    "normal": "D"
+  },
+  {
+    "code": "EQ",
+    "name": "Equity",
+    "category": "equity",
+    "normal": "C"
+  },
+  {
+    "code": "LC",
+    "name": "Current Liabilities",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "LN",
+    "name": "Non-current Liabilities",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
+    "code": "RE",
+    "name": "Revenue (Income)",
+    "category": "revenue",
+    "normal": "C"
+  },
+  {
+    "code": "EX",
+    "name": "Expenses (Costs)",
+    "category": "expense",
+    "normal": "D"
+  }
+]
