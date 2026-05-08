@@ -1,34 +1,46 @@
 [
   {
-    "id": "lecture-10-transactions",
-    "title": "Lecture practice — 10 transactions",
-    "description": "The ten transactions from the Accounting 101 lecture (slide 59). Description and amount are provided; you fill in debit and credit.",
-    "chart": "simplified",
-    "file": "lecture-10-transactions.csv",
-    "blanks": ["debit", "credit"]
+    "id": "lecture",
+    "title": "Lecture — 10 introductory transactions",
+    "description": "The ten transactions from slide 33 of the Accounting 101 lecture. Owner investment, equipment, rent, sales on credit, loan, and so on.",
+    "student": "01_Lecture_transactions_STUDENT.csv",
+    "solutions": {
+      "super": "01_Lecture_transactions_SOLUTION_super_simplified.csv",
+      "simplified": "01_Lecture_transactions_SOLUTION_simplified.csv",
+      "estonia": "01_Lecture_transactions_SOLUTION_estonian.csv"
+    }
   },
   {
-    "id": "lecture-10-transactions-solution",
-    "title": "Lecture practice — solution",
-    "description": "Reference solution for the ten lecture transactions (using the simplified chart of accounts).",
-    "chart": "simplified",
-    "file": "lecture-10-transactions-solution.csv",
-    "blanks": []
+    "id": "coffee-shop",
+    "title": "Practice A — Coffee shop",
+    "description": "A small café in its first month: opening capital, rent, espresso machine, beans on credit, sales, wages, utilities, prepayment from a catering customer.",
+    "student": "02_Practice_A_Coffee_shop_STUDENT.csv",
+    "solutions": {
+      "super": "02_Practice_A_Coffee_shop_SOLUTION_super_simplified.csv",
+      "simplified": "02_Practice_A_Coffee_shop_SOLUTION_simplified.csv",
+      "estonia": "02_Practice_A_Coffee_shop_SOLUTION_estonian.csv"
+    }
   },
   {
-    "id": "intro-3-transactions",
-    "title": "First steps — 3 transactions",
-    "description": "Three very first transactions for the super-simplified chart (AN/AC/EQ/LC/LN/RE/EX). A gentle warm-up.",
-    "chart": "super",
-    "file": "intro-3-transactions.csv",
-    "blanks": ["debit", "credit"]
+    "id": "freelancer",
+    "title": "Practice B — Freelancer",
+    "description": "A solo consultant: laptop, software subscriptions, sales on invoice, VAT prepayment, partial collection of receivables.",
+    "student": "03_Practice_B_Freelancer_STUDENT.csv",
+    "solutions": {
+      "super": "03_Practice_B_Freelancer_SOLUTION_super_simplified.csv",
+      "simplified": "03_Practice_B_Freelancer_SOLUTION_simplified.csv",
+      "estonia": "03_Practice_B_Freelancer_SOLUTION_estonian.csv"
+    }
   },
   {
-    "id": "intro-3-transactions-solution",
-    "title": "First steps — solution",
-    "description": "Reference solution for the three warm-up transactions on the super-simplified chart.",
-    "chart": "super",
-    "file": "intro-3-transactions-solution.csv",
-    "blanks": []
+    "id": "online-retailer",
+    "title": "Practice C — Online retailer",
+    "description": "An e-commerce shop: warehouse rent, inventory on credit, sales, returns, courier costs, payment processor fees.",
+    "student": "04_Practice_C_Online_retailer_STUDENT.csv",
+    "solutions": {
+      "super": "04_Practice_C_Online_retailer_SOLUTION_super_simplified.csv",
+      "simplified": "04_Practice_C_Online_retailer_SOLUTION_simplified.csv",
+      "estonia": "04_Practice_C_Online_retailer_SOLUTION_estonian.csv"
+    }
   }
 ]

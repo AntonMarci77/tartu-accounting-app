@@ -1,0 +1,12 @@
+﻿no;date;doc;description;amount;debit;credit
+1;01/03/2026;BAS201;"Founder's cash investment";5000,00;1020;2900
+2;02/03/2026;BAS202;"Annual professional software subscription";120,00;5040;1020
+3;05/03/2026;INV201;"Invoice issued to Client A";3200,00;1210;3200
+4;10/03/2026;BAS203;"Payment received from Client A";3200,00;1020;1210
+5;12/03/2026;BAS204;"Travel cost for client meeting (cash)";280,00;5610;1020
+6;15/03/2026;INV202;"Invoice issued to Client B (unpaid)";1800,00;1210;3200
+7;18/03/2026;BAS205;"Office supplies (cash)";90,00;5110;1020
+8;22/03/2026;INV203;"Accountant fee invoice (unpaid)";200,00;5350;2310
+9;28/03/2026;BAS206;"Quarterly VAT prepayment paid";450,00;1515;1020
+10;31/03/2026;BAS207;"Subcontractor payment";600,00;4300;1020
+11;;;"";0,00;;

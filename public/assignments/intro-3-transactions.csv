@@ -1,4 +1,0 @@
-no;date;doc;description;amount;debit;credit
-1;01/05/2026;BS001;"Owner invests cash into the business";5000,00;;
-2;05/05/2026;INV001;"Sells services for cash";1200,00;;
-3;10/05/2026;PAY001;"Pays the rent in cash";400,00;;

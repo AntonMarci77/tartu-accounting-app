@@ -1,0 +1,12 @@
+﻿no;date;doc;description;amount;debit;credit
+1;01/01/2026;BAS001;"Owner's investment - cash";10000,00;;
+2;02/01/2026;BAS002;"Office equipment purchased for cash";2000,00;;
+3;03/01/2026;BAS003;"First month office rent paid";500,00;;
+4;05/01/2026;INV001;"Services rendered on account (invoice)";3500,00;;
+5;10/01/2026;BAS004;"Payment received from client";1000,00;;
+6;12/01/2026;BAS005;"Advertising campaign paid";200,00;;
+7;15/01/2026;BAL001;"Bank loan received - 3 years";5000,00;;
+8;20/01/2026;INV002;"Office supplies purchased on credit";300,00;;
+9;25/01/2026;INV003;"Electricity bill received";150,00;;
+10;31/01/2026;BAS006;"Partial loan principal payment";100,00;;
+11;;;"";0,00;;

@@ -8,10 +8,17 @@ type Assignment = {
   id: string;
   title: string;
   description: string;
-  chart: ChartKey;
-  file: string;
-  blanks?: string[];
+  student: string;
+  solutions: Partial<Record<ChartKey, string>>;
 };
+
+const CHART_LABEL: Record<ChartKey, string> = {
+  super: "Super-simplified",
+  simplified: "Simplified",
+  estonia: "Estonian",
+};
+
+const CHART_ORDER: ChartKey[] = ["super", "simplified", "estonia"];
 
 export function LoadAssignment({
   onLoad,
@@ -26,14 +33,15 @@ export function LoadAssignment({
 
   useEffect(() => {
     if (!open || assignments) return;
-    fetch("/assignments/index.json")
+    fetch("/assignments/index.json", { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
       .then(setAssignments)
       .catch(() => setAssignments([]));
   }, [open, assignments]);
 
-  async function load(url: string, opts: { suggestedChart?: ChartKey; title?: string }) {
+  async function load(file: string, opts: { suggestedChart?: ChartKey; title?: string }) {
     setError(null);
+    const url = file.startsWith("http") || file.startsWith("/") ? file : `/assignments/${file}`;
     setLoading(url);
     try {
       const r = await fetch(url, { cache: "no-store" });
@@ -59,9 +67,12 @@ export function LoadAssignment({
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-40 bg-slate-900/40 flex items-center justify-center p-4 no-print" onClick={() => setOpen(false)}>
+        <div
+          className="fixed inset-0 z-40 bg-slate-900/40 flex items-center justify-center p-4 no-print"
+          onClick={() => setOpen(false)}
+        >
           <div
-            className="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[80vh] overflow-hidden flex flex-col"
+            className="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[85vh] overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <header className="px-5 py-3 border-b border-slate-100 flex items-center gap-2 bg-ut-navy text-white">
@@ -87,47 +98,44 @@ export function LoadAssignment({
                 </p>
               )}
               {assignments && assignments.length > 0 && (
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {assignments.map((a) => (
-                    <li
-                      key={a.id}
-                      className="rounded-xl border border-slate-200 hover:border-ut-medium transition p-3"
-                    >
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="min-w-0 flex-1">
-                          <h3 className="font-semibold text-ut-navy text-sm">{a.title}</h3>
-                          <p className="text-xs text-slate-600 mt-1">{a.description}</p>
-                          <div className="mt-2 flex flex-wrap items-center gap-2 text-[10px]">
-                            <span className="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded font-mono">
-                              chart: {a.chart}
-                            </span>
-                            {a.blanks && a.blanks.length > 0 && (
-                              <span className="bg-amber-50 text-amber-700 px-1.5 py-0.5 rounded">
-                                exercise — {a.blanks.join(" + ")} blank
-                              </span>
-                            )}
-                            {a.blanks && a.blanks.length === 0 && (
-                              <span className="bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded">
-                                solution
-                              </span>
-                            )}
-                          </div>
-                        </div>
+                    <li key={a.id} className="rounded-xl border border-slate-200 p-3">
+                      <h3 className="font-semibold text-ut-navy text-sm">{a.title}</h3>
+                      <p className="text-xs text-slate-600 mt-1">{a.description}</p>
+                      <div className="mt-3 flex flex-wrap gap-2">
                         <button
                           onClick={() =>
-                            load(`/assignments/${a.file}`, {
-                              suggestedChart: a.chart,
-                              title: a.title,
-                            })
+                            load(a.student, { title: a.title })
                           }
                           disabled={loading !== null}
-                          className="shrink-0 inline-flex items-center gap-1 rounded-md bg-ut-dark text-white px-3 py-1.5 text-xs hover:bg-ut-navy disabled:opacity-50 transition"
+                          className="inline-flex items-center gap-1 rounded-md bg-ut-dark text-white px-3 py-1.5 text-xs hover:bg-ut-navy disabled:opacity-50 transition"
                         >
-                          {loading === `/assignments/${a.file}` ? (
+                          {loading?.endsWith(a.student) ? (
                             <Loader2 size={12} className="animate-spin" />
                           ) : null}
-                          Load
+                          Student version (blank Dr/Cr)
                         </button>
+                        {CHART_ORDER.map((k) =>
+                          a.solutions[k] ? (
+                            <button
+                              key={k}
+                              onClick={() =>
+                                load(a.solutions[k]!, {
+                                  suggestedChart: k,
+                                  title: `${a.title} — solution (${CHART_LABEL[k]})`,
+                                })
+                              }
+                              disabled={loading !== null}
+                              className="inline-flex items-center gap-1 rounded-md border border-slate-300 bg-white text-slate-700 px-3 py-1.5 text-xs hover:border-ut-medium hover:text-ut-dark disabled:opacity-50 transition"
+                            >
+                              {loading?.endsWith(a.solutions[k]!) ? (
+                                <Loader2 size={12} className="animate-spin" />
+                              ) : null}
+                              Solution: {CHART_LABEL[k]}
+                            </button>
+                          ) : null
+                        )}
                       </div>
                     </li>
                   ))}
@@ -160,7 +168,7 @@ export function LoadAssignment({
                 </div>
                 {error && <p className="mt-2 text-xs text-rose-700">{error}</p>}
                 <p className="mt-2 text-[11px] text-slate-500">
-                  Tip: on GitHub, click the file → click "Raw" — copy the URL from the address bar.
+                  Tip: on GitHub open the CSV file → click <span className="font-mono">Raw</span> → copy the URL from the address bar.
                 </p>
               </div>
             </div>

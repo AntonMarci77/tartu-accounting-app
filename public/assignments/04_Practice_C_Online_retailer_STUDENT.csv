@@ -1,0 +1,12 @@
+﻿no;date;doc;description;amount;debit;credit
+1;01/04/2026;BAS301;"Founders' capital injection";25000,00;;
+2;02/04/2026;BAL301;"Bank loan received";15000,00;;
+3;05/04/2026;INV301;"Inventory purchased on credit";18000,00;;
+4;07/04/2026;BAS302;"Shipping & packing equipment (cash)";4000,00;;
+5;10/04/2026;INV302;"Online sales - cash portion";6000,00;;
+6;10/04/2026;INV303;"Online sales - on account portion";6000,00;;
+7;15/04/2026;BAS303;"Marketing campaign payment";1200,00;;
+8;20/04/2026;BAS304;"Payment to inventory supplier";10000,00;;
+9;25/04/2026;BAS305;"Cash collected from customers";3000,00;;
+10;30/04/2026;BAS306;"Loan interest payment";75,00;;
+11;;;"";0,00;;

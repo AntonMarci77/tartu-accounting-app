@@ -1,0 +1,12 @@
+﻿no;date;doc;description;amount;debit;credit
+1;01/02/2026;BAS101;"Owner cash injection to start cafe";15000,00;A8;E1
+2;02/02/2026;BAS102;"Cafe rent first month paid";1600,00;X2;A8
+3;03/02/2026;INV101;"Espresso machine bought (paid cash)";4500,00;A2;A8
+4;04/02/2026;INV102;"Coffee beans inventory bought on credit";800,00;X1;L4
+5;08/02/2026;BAS103;"First-week coffee sales (cash)";1200,00;A8;R1
+6;10/02/2026;BAS104;"Barista weekly wage paid";700,00;X3;A8
+7;12/02/2026;INV103;"Utilities bill paid";450,00;X2;A8
+8;14/02/2026;BAS105;"Milk and supplies (cash)";300,00;X1;A8
+9;20/02/2026;BAS106;"Customer pre-payment for catering";500,00;A8;L7
+10;28/02/2026;BAL101;"Second espresso machine via bank loan";3500,00;A2;L1
+11;;;"";0,00;;
