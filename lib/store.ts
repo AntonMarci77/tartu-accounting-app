@@ -12,6 +12,7 @@ export type JournalEntry = {
   debit: string; // account code
   credit: string; // account code
   amount: number;
+  cf?: string; // cash-flow tag (see lib/cashflow.ts) - only meaningful when the entry touches a cash account
 };
 
 const KEY_ENTRIES = "tartu.journal.entries.v1";

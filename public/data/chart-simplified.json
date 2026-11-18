@@ -114,6 +114,12 @@
     "normal": "C"
   },
   {
+    "code": "L8",
+    "name": "Dividends Payable",
+    "category": "liability",
+    "normal": "C"
+  },
+  {
     "code": "R1",
     "name": "Sales Revenue",
     "category": "revenue",
@@ -178,5 +184,11 @@
     "name": "Income Tax Expense",
     "category": "expense",
     "normal": "D"
+  },
+  {
+    "code": "OB",
+    "name": "Opening Balance (technical account)",
+    "category": "equity",
+    "normal": "C"
   }
 ]

@@ -1,5 +1,28 @@
 [
   {
+    "id": "supilinn-cycles",
+    "title": "Workshop - Supilinn Cycles OÜ: from the journal to the cash flow statement, income tax and notes",
+    "description": "A bike shop in Tartu in its second year (fictional). Opening balances are pre-booked. Book the year 2026, tag the cash rows, compute the income tax on the dividend and on the owner's private expense, then read the cash flow statement and write the notes.",
+    "student": "05_Workshop_Supilinn_Cycles_STUDENT_simplified.csv",
+    "students": {
+      "simplified": "05_Workshop_Supilinn_Cycles_STUDENT_simplified.csv",
+      "estonia": "05_Workshop_Supilinn_Cycles_STUDENT_estonian.csv"
+    },
+    "stages": [
+      {
+        "label": "Booked, cash-flow tags blank",
+        "files": {
+          "simplified": "05_Workshop_Supilinn_Cycles_BOOKED_simplified.csv",
+          "estonia": "05_Workshop_Supilinn_Cycles_BOOKED_estonian.csv"
+        }
+      }
+    ],
+    "solutions": {
+      "simplified": "05_Workshop_Supilinn_Cycles_SOLUTION_simplified.csv",
+      "estonia": "05_Workshop_Supilinn_Cycles_SOLUTION_estonian.csv"
+    }
+  },
+  {
     "id": "lecture",
     "title": "Lecture — 10 introductory transactions",
     "description": "The ten transactions from slide 33 of the Accounting 101 lecture. Owner investment, equipment, rent, sales on credit, loan, and so on.",

@@ -14,6 +14,7 @@ import { TAccountsGrid } from "@/components/TAccountsGrid";
 import { ChartReference } from "@/components/ChartReference";
 import { LoadAssignment } from "@/components/LoadAssignment";
 import { formatEUR, parseEUDate, formatEUDate, todayISO } from "@/lib/format";
+import { CF_TAGS, CF_SECTION_LABEL, findTag, touchesCash, type CfSection } from "@/lib/cashflow";
 import type { ChartKey } from "@/lib/data/charts";
 
 const COLS = ["date", "doc", "description", "amount", "debit", "credit"] as const;
@@ -92,8 +93,19 @@ export default function JournalPage() {
     return { dr, cr };
   }, [entries]);
 
+  const cashRows = useMemo(() => {
+    let total = 0,
+      tagged = 0;
+    for (const e of entries) {
+      if (!touchesCash(e, chart)) continue;
+      total++;
+      if (findTag(e.cf)) tagged++;
+    }
+    return { total, tagged };
+  }, [entries, chart]);
+
   function exportCSV() {
-    const header = "no;date;doc;description;amount;debit;credit";
+    const header = "no;date;doc;description;amount;debit;credit;cf";
     const rows = entries.map((e) =>
       [
         e.no,
@@ -103,6 +115,7 @@ export default function JournalPage() {
         (e.amount || 0).toFixed(2).replace(".", ","),
         e.debit,
         e.credit,
+        e.cf || "",
       ].join(";")
     );
     const blob = new Blob(["﻿" + [header, ...rows].join("\n")], { type: "text/csv;charset=utf-8" });
@@ -154,6 +167,8 @@ export default function JournalPage() {
           debit: dr,
           credit: cr,
           amount: parseFloat(amtRaw.replace(/\s/g, "").replace(",", ".")) || 0,
+          // optional 8th column: cash-flow tag (current layout only)
+          cf: headerLine.includes("credit;cf") && parts[7] ? parts[7].toUpperCase() : "",
         });
       }
       // Add a trailing blank row so students can keep typing
@@ -207,12 +222,12 @@ export default function JournalPage() {
             <thead className="bg-ut-navy text-white">
               <tr className="text-left">
                 <th className="px-3 py-2 w-10">#</th>
-                <th className="px-3 py-2 w-28">Date</th>
-                <th className="px-3 py-2 w-24">Doc</th>
-                <th className="px-3 py-2">Description</th>
+                <th className="px-3 py-2 w-24">Date</th>
+                <th className="px-3 py-2 w-20">Doc</th>
+                <th className="px-3 py-2 min-w-[12rem]">Description{chart !== "super" ? " · cash flow" : ""}</th>
                 <th className="px-3 py-2 w-28 text-right">Amount</th>
-                <th className="px-3 py-2 w-40">Debit (Dr)</th>
-                <th className="px-3 py-2 w-40">Credit (Cr)</th>
+                <th className="px-3 py-2 w-32">Debit (Dr)</th>
+                <th className="px-3 py-2 w-32">Credit (Cr)</th>
                 <th className="px-3 py-2 w-10"></th>
               </tr>
             </thead>
@@ -294,10 +309,23 @@ export default function JournalPage() {
           <h1 className="text-2xl sm:text-3xl font-bold text-ut-navy">Accounting Journal</h1>
           <p className="text-sm text-slate-600 mt-1">
             Tab or Enter to move from field to field. The T-accounts and statements on this page update with every transaction —
-            watch them shift as you type.
+            watch them shift as you type. Rows that move cash get a cash-flow tag (operating, investing or financing) for the
+            cash flow statement.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
+          {chart !== "super" && cashRows.total > 0 && (
+            <Link
+              href="/cash-flow"
+              className={`text-xs rounded-full px-3 py-1 border transition ${
+                cashRows.tagged === cashRows.total
+                  ? "bg-emerald-50 border-emerald-200 text-emerald-700"
+                  : "bg-amber-50 border-amber-200 text-amber-800"
+              }`}
+            >
+              Cash flow tags: {cashRows.tagged}/{cashRows.total} → statement
+            </Link>
+          )}
           <label className="text-xs text-slate-500">Chart</label>
           <select
             value={chart}
@@ -315,9 +343,9 @@ export default function JournalPage() {
 
       {/* Journal on the left, Statements + Chart of Accounts in the right rail (sticky on xl, stacked below xl). */}
       <div className="grid xl:grid-cols-12 gap-4 xl:gap-6">
-        <div className="xl:col-span-7 space-y-3">{journalCard}</div>
+        <div className="xl:col-span-8 space-y-3">{journalCard}</div>
 
-        <aside className="xl:col-span-5">
+        <aside className="xl:col-span-4">
           <div className="xl:sticky xl:top-20 space-y-4">
             <div>
               <h2 className="text-xs font-semibold uppercase tracking-wider text-ut-medium mb-2">Live statements</h2>
@@ -431,8 +459,14 @@ function DesktopRow(props: {
             }
           }}
           placeholder="Description"
+          title={entry.description}
           className="w-full rounded-md border border-slate-300 px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-ut-medium focus:border-ut-medium"
         />
+        {chart !== "super" && touchesCash(entry, chart) && (
+          <div className="mt-1">
+            <CfSelect entry={entry} chart={chart} update={update} />
+          </div>
+        )}
       </td>
       <td className="px-2 py-1.5">
         <AmountInput
@@ -591,6 +625,54 @@ function MobileRow(props: {
           )}
         </div>
       </div>
+      {chart !== "super" && touchesCash(entry, chart) && (
+        <div>
+          <label className="block text-[11px] font-medium text-slate-500 mb-1">Cash flow</label>
+          <CfSelect entry={entry} chart={chart} update={update} />
+        </div>
+      )}
     </div>
+  );
+}
+
+// ===== Cash-flow tag (only for rows that move cash) =====
+const CF_SECTION_STYLE: Record<CfSection, string> = {
+  O: "border-sky-300 bg-sky-50 text-sky-900",
+  I: "border-violet-300 bg-violet-50 text-violet-900",
+  F: "border-amber-300 bg-amber-50 text-amber-900",
+  X: "border-slate-300 bg-slate-50 text-slate-700",
+};
+
+function CfSelect(props: {
+  entry: JournalEntry;
+  chart: keyof typeof CHARTS;
+  update: (p: Partial<JournalEntry>) => void;
+}) {
+  const { entry, chart, update } = props;
+  if (!touchesCash(entry, chart)) {
+    return <span className="text-xs text-slate-300 px-1">-</span>;
+  }
+  const tag = findTag(entry.cf);
+  const sections: CfSection[] = ["O", "I", "F", "X"];
+  return (
+    <select
+      value={tag?.id ?? ""}
+      onChange={(e) => update({ cf: e.target.value })}
+      title={tag ? `${CF_SECTION_LABEL[tag.section]}: ${tag.label}` : "Which activity does this cash flow belong to?"}
+      className={`w-full rounded-md border px-2 py-1 text-xs focus:outline-none focus:ring-2 focus:ring-ut-medium ${
+        tag ? CF_SECTION_STYLE[tag.section] : "border-rose-300 bg-rose-50 text-rose-700"
+      }`}
+    >
+      <option value="">cash flow: choose activity…</option>
+      {sections.map((sec) => (
+        <optgroup key={sec} label={CF_SECTION_LABEL[sec]}>
+          {CF_TAGS.filter((t) => t.section === sec).map((t) => (
+            <option key={t.id} value={t.id}>
+              {t.id} · {t.label}
+            </option>
+          ))}
+        </optgroup>
+      ))}
+    </select>
   );
 }

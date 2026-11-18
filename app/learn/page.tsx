@@ -18,6 +18,7 @@ const sections = [
   { id: "transactions", label: "Transactions" },
   { id: "statements", label: "Statements" },
   { id: "methods", label: "Cash vs. accrual" },
+  { id: "cashflow", label: "Cash flow & notes" },
   { id: "practice", label: "Practice list" },
 ];
 
@@ -148,6 +149,57 @@ export default function LearnPage() {
               <p className="text-sm text-slate-700 mt-1">{m.body}</p>
             </article>
           ))}
+        </div>
+      </Section>
+
+      <Section id="cashflow" title="Cash flow statement, notes and the Estonian income tax">
+        <p>
+          Profit is not cash. The <strong>statement of cash flows</strong> explains how cash changed during the year, split into three
+          activities. The <strong>notes</strong> explain what the numbers alone cannot.
+        </p>
+        <div className="grid sm:grid-cols-3 gap-3 mt-3">
+          <Card title="Operating">
+            The day-to-day business: receipts from customers, payments to suppliers and employees, interest and income tax paid.
+          </Card>
+          <Card title="Investing">
+            Buying and selling non-current assets and investments, loans granted, interest and dividends received.
+          </Card>
+          <Card title="Financing">
+            Money from and to those who finance the company: loans received and repaid, share issues, dividends paid.
+          </Card>
+        </div>
+        <ul className="mt-3 list-disc pl-5 space-y-1">
+          <li>
+            <strong>Direct method:</strong> gross receipts and payments. <strong>Indirect method:</strong> operating profit, plus
+            non-cash expenses (depreciation), less gains that belong to investing, adjusted for changes in receivables, inventories
+            and payables. Both give the same operating cash flow.
+          </li>
+          <li>
+            An increase in an operating asset uses cash; an increase in an operating liability saves cash.
+          </li>
+          <li>
+            Transactions without cash (an asset bought on credit, a loan converted into shares) are not in the statement - they are
+            explained in the notes.
+          </li>
+          <li>
+            In Estonia, micro and small undertakings may prepare abridged accounts: balance sheet, income statement and limited
+            notes. Medium-sized and large undertakings add the cash flow statement and the statement of changes in equity.
+          </li>
+          <li>
+            Estonian companies pay income tax only when profit is distributed: 22/78 of the net dividend. The tax that would fall
+            due if all retained earnings were paid out is shown in the notes.
+          </li>
+        </ul>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <Link href="/cash-flow" className="inline-flex items-center gap-2 rounded-lg border border-ut-medium text-ut-dark px-3 py-1.5 text-sm hover:bg-ut-light/30 transition">
+            Cash flow statement <ArrowRight size={14} />
+          </Link>
+          <Link href="/notes" className="inline-flex items-center gap-2 rounded-lg border border-ut-medium text-ut-dark px-3 py-1.5 text-sm hover:bg-ut-light/30 transition">
+            Notes <ArrowRight size={14} />
+          </Link>
+          <Link href="/tax" className="inline-flex items-center gap-2 rounded-lg border border-ut-medium text-ut-dark px-3 py-1.5 text-sm hover:bg-ut-light/30 transition">
+            Income tax <ArrowRight size={14} />
+          </Link>
         </div>
       </Section>
 

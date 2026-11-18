@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, BookText, ClipboardList, GraduationCap, Layers, ListTree, ScrollText } from "lucide-react";
+import { ArrowRight, Banknote, BookOpen, BookText, ClipboardList, FileText, GraduationCap, Landmark, Layers, ListTree, ScrollText } from "lucide-react";
 
 const tiles = [
   {
@@ -22,6 +22,27 @@ const tiles = [
     text: "Auto-built Balance Sheet and Statement of Profit or Loss based on the journal you keep.",
     icon: ScrollText,
     accent: "from-ut-navy to-ut-dark",
+  },
+  {
+    href: "/cash-flow",
+    title: "Cash flow",
+    text: "Tag the rows that move cash and get the Statement of Cash Flows - direct and indirect method, checked against each other.",
+    icon: Banknote,
+    accent: "from-ut-dark to-ut-navy",
+  },
+  {
+    href: "/notes",
+    title: "Notes",
+    text: "Find the size category of the company and build the notes: the numbers come from the journal, the words from you.",
+    icon: FileText,
+    accent: "from-ut-medium to-ut-dark",
+  },
+  {
+    href: "/tax",
+    title: "Income tax (Estonia)",
+    text: "The distribution tax in practice: 22/78 on dividends, fringe benefits and private expenses, and the hidden tax on retained earnings.",
+    icon: Landmark,
+    accent: "from-ut-navy to-ut-medium",
   },
   {
     href: "/chart-of-accounts",
@@ -56,7 +77,7 @@ export default function HomePage() {
             From a transaction to a financial statement.
           </h1>
           <p className="mt-3 text-white/85 max-w-2xl text-sm sm:text-base">
-            A small workbook to practice double-entry bookkeeping the way it is taught in the lecture: pick a chart of accounts, enter a transaction, see the T-accounts move, and watch the balance sheet stay in balance.
+            A small workbook to practice double-entry bookkeeping the way it is taught in the lecture: pick a chart of accounts, enter a transaction, see the T-accounts move, watch the balance sheet stay in balance - and finish the year with a cash flow statement, the income tax and the notes.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
@@ -112,6 +133,14 @@ export default function HomePage() {
           <li className="rounded-lg border border-slate-100 p-3">
             <span className="font-medium text-ut-dark">4. Check the reports.</span> Confirm that
             Assets = Liabilities + Equity and that profit landed where you expected.
+          </li>
+          <li className="rounded-lg border border-slate-100 p-3">
+            <span className="font-medium text-ut-dark">5. Follow the cash.</span> Tag every row that moves cash as
+            operating, investing or financing and read the Statement of Cash Flows.
+          </li>
+          <li className="rounded-lg border border-slate-100 p-3">
+            <span className="font-medium text-ut-dark">6. Close the year.</span> Compute the income tax on what was
+            distributed and write the notes a reader of the accounts needs.
           </li>
         </ol>
       </section>

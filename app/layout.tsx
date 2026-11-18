@@ -5,7 +5,7 @@ import { NavBar } from "@/components/NavBar";
 export const metadata: Metadata = {
   title: "Accounting 101 · University of Tartu",
   description:
-    "Interactive accounting workbook — chart of accounts, journal entries, T-accounts, principles and self-test for University of Tartu Accounting 101 students.",
+    "Interactive accounting workbook - chart of accounts, journal entries, T-accounts, statements, cash flow statement, notes, Estonian income tax and self-test for University of Tartu accounting students.",
 };
 
 export const viewport: Viewport = {
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <span>
               Accounting 101 · University of Tartu · for educational use
             </span>
-            <span>Anton Marci · Erasmus 2025/2026</span>
+            <span>Anton Marci · Erasmus+ teaching mobility</span>
           </div>
         </footer>
       </body>

@@ -34,6 +34,14 @@ export default function ReportsPage() {
         </div>
       </div>
       <StatementsPanel entries={entries} chart={chart} variant="full" />
+      <div className="no-print flex flex-wrap gap-2">
+        <Link href="/cash-flow" className="inline-flex items-center gap-1 rounded-md border border-ut-medium text-ut-dark px-3 py-1.5 text-sm bg-white hover:bg-ut-light/30 transition">
+          Statement of Cash Flows →
+        </Link>
+        <Link href="/notes" className="inline-flex items-center gap-1 rounded-md border border-ut-medium text-ut-dark px-3 py-1.5 text-sm bg-white hover:bg-ut-light/30 transition">
+          Notes →
+        </Link>
+      </div>
       <p className="text-xs text-slate-500">
         Note: this is a teaching tool, not a substitute for an audited report. The "Profit / loss for the period" line in the
         Balance Sheet is derived from the difference between revenue and expense balances.

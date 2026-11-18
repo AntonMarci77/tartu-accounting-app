@@ -40,5 +40,11 @@
     "name": "Expenses (Costs)",
     "category": "expense",
     "normal": "D"
+  },
+  {
+    "code": "OB",
+    "name": "Opening Balance (technical account)",
+    "category": "equity",
+    "normal": "C"
   }
 ]

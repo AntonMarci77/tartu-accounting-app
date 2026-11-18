@@ -15,6 +15,7 @@ const superSimplified = [
   { code: "LN", name: "Non-current Liabilities", category: "liability", normal: "C" },
   { code: "RE", name: "Revenue (Income)", category: "revenue", normal: "C" },
   { code: "EX", name: "Expenses (Costs)", category: "expense", normal: "D" },
+  { code: "OB", name: "Opening Balance (technical account)", category: "equity", normal: "C" },
 ];
 
 const simplified = [
@@ -37,6 +38,7 @@ const simplified = [
   { code: "L5", name: "Tax Liabilities", category: "liability", normal: "C" },
   { code: "L6", name: "Payroll & Social Security", category: "liability", normal: "C" },
   { code: "L7", name: "Other Current Liabilities", category: "liability", normal: "C" },
+  { code: "L8", name: "Dividends Payable", category: "liability", normal: "C" },
   { code: "R1", name: "Sales Revenue", category: "revenue", normal: "C" },
   { code: "R2", name: "Other Operating Income", category: "revenue", normal: "C" },
   { code: "R3", name: "Financial Income", category: "revenue", normal: "C" },
@@ -48,6 +50,7 @@ const simplified = [
   { code: "X6", name: "Other Operating Expenses", category: "expense", normal: "D" },
   { code: "X7", name: "Financial Expenses", category: "expense", normal: "D" },
   { code: "X8", name: "Income Tax Expense", category: "expense", normal: "D" },
+  { code: "OB", name: "Opening Balance (technical account)", category: "equity", normal: "C" },
 ];
 
 function classifyEstonia(cls, dc) {
@@ -70,7 +73,8 @@ const estonia = estoniaRaw
     const { category, normal } = classifyEstonia(r.cls, r.dc);
     return { code: r.code, name: r.name, category, normal };
   })
-  .filter((a) => a.code && a.name);
+  .filter((a) => a.code && a.name)
+  .concat([{ code: "0000", name: "Opening balance (technical account)", category: "equity", normal: "C" }]);
 
 const outDir = path.join(root, "public/data");
 fs.mkdirSync(outDir, { recursive: true });

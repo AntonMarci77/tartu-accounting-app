@@ -10,6 +10,10 @@ type Assignment = {
   description: string;
   student: string;
   solutions: Partial<Record<ChartKey, string>>;
+  /** Optional chart-specific student files (when the student file already contains accounts, e.g. opening balances). */
+  students?: Partial<Record<ChartKey, string>>;
+  /** Optional intermediate versions, e.g. "booked, cash-flow tags still blank". */
+  stages?: { label: string; files: Partial<Record<ChartKey, string>> }[];
 };
 
 const CHART_LABEL: Record<ChartKey, string> = {
@@ -104,6 +108,20 @@ export function LoadAssignment({
                       <h3 className="font-semibold text-ut-navy text-sm">{a.title}</h3>
                       <p className="text-xs text-slate-600 mt-1">{a.description}</p>
                       <div className="mt-3 flex flex-wrap gap-2">
+                        {a.students
+                          ? CHART_ORDER.map((k) =>
+                              a.students![k] ? (
+                                <button
+                                  key={`st-${k}`}
+                                  onClick={() => load(a.students![k]!, { suggestedChart: k, title: a.title })}
+                                  disabled={loading !== null}
+                                  className="inline-flex items-center gap-1 rounded-md bg-ut-dark text-white px-3 py-1.5 text-xs hover:bg-ut-navy disabled:opacity-50 transition"
+                                >
+                                  Student version: {CHART_LABEL[k]}
+                                </button>
+                              ) : null
+                            )
+                          : (
                         <button
                           onClick={() =>
                             load(a.student, { title: a.title })
@@ -116,6 +134,21 @@ export function LoadAssignment({
                           ) : null}
                           Student version (blank Dr/Cr)
                         </button>
+                            )}
+                        {(a.stages ?? []).map((stg) =>
+                          CHART_ORDER.map((k) =>
+                            stg.files[k] ? (
+                              <button
+                                key={`${stg.label}-${k}`}
+                                onClick={() => load(stg.files[k]!, { suggestedChart: k, title: `${a.title} - ${stg.label}` })}
+                                disabled={loading !== null}
+                                className="inline-flex items-center gap-1 rounded-md border border-ut-medium bg-white text-ut-dark px-3 py-1.5 text-xs hover:bg-ut-light/30 disabled:opacity-50 transition"
+                              >
+                                {stg.label}: {CHART_LABEL[k]}
+                              </button>
+                            ) : null
+                          )
+                        )}
                         {CHART_ORDER.map((k) =>
                           a.solutions[k] ? (
                             <button

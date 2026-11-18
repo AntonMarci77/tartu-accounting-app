@@ -7,6 +7,10 @@ A small Next.js workbook for Erasmus students of the University of Tartu Account
 - **Journal** — Tabulator-style entry with European date (DD/MM/YY) and amount (122,22) formats. Tab/Enter moves field-by-field; a new row is added automatically at the end. Three chart-of-accounts levels: super-simplified (7), simplified (~30), and the full Estonian e-Financials chart (~295).
 - **T-accounts** — every posting from the journal laid out in classic T-form, with a closing balance and the natural side hint.
 - **Reports** — auto-generated Statement of Financial Position and Statement of Profit or Loss.
+- **Cash flow** - every journal row that moves cash gets a cash-flow tag (operating / investing / financing). The page builds the Statement of Cash Flows by the direct method from the tags and by the indirect method from the ledger, and reconciles the two.
+- **Notes** - size category under the Estonian Accounting Act and a notes builder (numbers from the journal, text by the student).
+- **Tax** - Estonian distribution tax: 22/78 on dividends, fringe benefits and non-business expenses; contingent income tax on retained earnings.
+- **Opening balances** - booked against the technical account `OB` (Estonian chart: `0000`); such rows are the opening position and are not cash flows of the period.
 - **Chart of Accounts** — searchable browser of all three charts.
 - **Learn** — wrap-up of the lecture: 11 named accounting principles, asset/liability/equity/income/expense definitions, eight transaction patterns, four financial statements, accrual vs. cash, and the ten practice transactions.
 - **Self-test** — three pre-made quiz versions (A, B, C) plus a Random version. Instant feedback with explanations.

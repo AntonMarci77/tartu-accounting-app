@@ -85,9 +85,10 @@ export default function QuizPage() {
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <label className="text-xs text-slate-500">Version</label>
-          {(["A", "B", "C"] as const).map((v) => (
+          {(["A", "B", "C", "D"] as const).map((v) => (
             <button
               key={v}
+              title={v === "D" ? "Cash flow statement, notes and Estonian income tax" : `Version ${v}`}
               onClick={() => setVersion(v)}
               className={`w-9 h-9 rounded-md font-semibold text-sm border transition ${
                 version === v

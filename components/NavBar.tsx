@@ -10,6 +10,9 @@ const links = [
   { href: "/journal", label: "Journal" },
   { href: "/t-accounts", label: "T-accounts" },
   { href: "/reports", label: "Reports" },
+  { href: "/cash-flow", label: "Cash flow" },
+  { href: "/notes", label: "Notes" },
+  { href: "/tax", label: "Tax" },
   { href: "/chart-of-accounts", label: "Chart" },
   { href: "/learn", label: "Learn" },
   { href: "/quiz", label: "Self-test" },
@@ -30,12 +33,12 @@ export function NavBar() {
           </span>
           <span className="hidden xs:inline sm:inline">Accounting 101</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`px-3 py-1.5 rounded-md text-sm transition ${
+              className={`px-2.5 py-1.5 rounded-md text-sm whitespace-nowrap transition ${
                 isActive(l.href)
                   ? "bg-white/15 text-white"
                   : "text-white/80 hover:bg-white/10 hover:text-white"
@@ -47,14 +50,14 @@ export function NavBar() {
         </nav>
         <button
           aria-label="Open menu"
-          className="md:hidden p-2 rounded-md hover:bg-white/10"
+          className="lg:hidden p-2 rounded-md hover:bg-white/10"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
       {open && (
-        <nav className="md:hidden border-t border-white/10 bg-ut-navy">
+        <nav className="lg:hidden border-t border-white/10 bg-ut-navy">
           <ul className="px-2 py-2 flex flex-col">
             {links.map((l) => (
               <li key={l.href}>

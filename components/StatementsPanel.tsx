@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import { CHARTS, findAccount, type Account, type ChartKey } from "@/lib/data/charts";
+import { findAccount, isOpeningAccount, type Account, type ChartKey } from "@/lib/data/charts";
 import { formatEUR } from "@/lib/format";
 import type { JournalEntry } from "@/lib/store";
 
@@ -32,21 +32,26 @@ export function StatementsPanel({
       if (!e.amount) continue;
       if (e.debit) {
         const r = getOrInit(e.debit.toUpperCase());
-        if (r) r.balance += r.account.normal === "D" ? e.amount : -e.amount;
+        if (r) r.balance += side(r.account) * e.amount;
       }
       if (e.credit) {
         const r = getOrInit(e.credit.toUpperCase());
-        if (r) r.balance += r.account.normal === "C" ? e.amount : -e.amount;
+        if (r) r.balance -= side(r.account) * e.amount;
       }
     }
-    return Array.from(m.values());
+    return Array.from(m.values()).sort((a, b) => a.account.code.localeCompare(b.account.code));
   }, [entries, chart]);
 
-  const assets = balances.filter((r) => r.account.category === "asset");
-  const liabilities = balances.filter((r) => r.account.category === "liability");
-  const equity = balances.filter((r) => r.account.category === "equity");
-  const revenues = balances.filter((r) => r.account.category === "revenue");
-  const expenses = balances.filter((r) => r.account.category === "expense");
+  // The technical opening-balance account must net to zero and is not part of the statements.
+  const openingRow = balances.find((r) => isOpeningAccount(r.account.code, chart));
+  const openingDiff = openingRow ? openingRow.balance : 0;
+  const stmt = balances.filter((r) => !isOpeningAccount(r.account.code, chart));
+
+  const assets = stmt.filter((r) => r.account.category === "asset");
+  const liabilities = stmt.filter((r) => r.account.category === "liability");
+  const equity = stmt.filter((r) => r.account.category === "equity");
+  const revenues = stmt.filter((r) => r.account.category === "revenue");
+  const expenses = stmt.filter((r) => r.account.category === "expense");
 
   const sum = (arr: Line[]) => arr.reduce((s, l) => s + l.balance, 0);
   const totalAssets = sum(assets);
@@ -57,7 +62,7 @@ export function StatementsPanel({
   const profitOrLoss = totalRevenue - totalExpenses;
   const totalLE = totalLiabilities + totalEquity + profitOrLoss;
   const balanced = Math.abs(totalAssets - totalLE) < 0.01;
-  const empty = balances.length === 0;
+  const empty = stmt.length === 0;
   const compact = variant === "compact";
 
   return (
@@ -88,6 +93,11 @@ export function StatementsPanel({
               <span>Total liabilities + equity</span>
               <span className="tabular-nums">{formatEUR(totalLE)}</span>
             </div>
+            {Math.abs(openingDiff) >= 0.01 && (
+              <p className="text-[11px] text-rose-700 bg-rose-50 border border-rose-100 rounded px-2 py-1">
+                The opening-balance account does not net to zero (Δ {formatEUR(openingDiff, false)}) - an opening balance is missing or wrong.
+              </p>
+            )}
           </div>
         )}
       </article>
@@ -117,6 +127,12 @@ export function StatementsPanel({
       </article>
     </div>
   );
+}
+
+// Assets and expenses are debit-positive; liabilities, equity and revenue are credit-positive.
+// A contra account (e.g. accumulated depreciation) therefore shows as a negative asset.
+function side(acc: Account): 1 | -1 {
+  return acc.category === "asset" || acc.category === "expense" ? 1 : -1;
 }
 
 function Section({

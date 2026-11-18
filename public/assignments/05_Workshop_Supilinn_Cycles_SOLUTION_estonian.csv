@@ -1,0 +1,38 @@
+﻿no;date;doc;description;amount;debit;credit;cf
+1;01/01/2026;OB;"Opening: rental bikes and workshop equipment (cost)";24000,00;1820;0000;
+2;01/01/2026;OB;"Opening: accumulated depreciation";6000,00;0000;1842;
+3;01/01/2026;OB;"Opening: inventories (bikes and parts for resale)";4000,00;1640;0000;
+4;01/01/2026;OB;"Opening: trade receivables";3000,00;1210;0000;
+5;01/01/2026;OB;"Opening: bank account";9000,00;1020;0000;
+6;01/01/2026;OB;"Opening: share capital";2500,00;0000;2900;
+7;01/01/2026;OB;"Opening: retained earnings";16500,00;0000;2960;
+8;01/01/2026;OB;"Opening: long-term bank loan";12000,00;0000;2810;
+9;01/01/2026;OB;"Opening: trade payables";3000,00;0000;2310;
+10;15/01/2026;BS01;"Customers pay last year's invoices";3000,00;1020;1210;O1
+11;20/01/2026;BS02;"Last year's supplier invoices paid";3000,00;2310;1020;O2
+12;01/03/2026;BS03;"New 4-year bank loan received";10000,00;1020;2810;F1
+13;02/03/2026;BS04;"Ten new rental e-bikes bought and paid";15000,00;1820;1020;I1
+14;15/03/2026;PI01;"Goods for resale purchased on credit (total for the year)";30000,00;1640;2310;
+15;30/04/2026;RES1;"Dividend declared from retained earnings (net amount)";7800,00;2960;2650;
+16;30/04/2026;RES1;"Income tax on the dividend (22/78 of the net dividend)";2200,00;8900;2656;
+17;05/05/2026;BS05;"Dividend paid to the shareholder";7800,00;2650;1020;F4
+18;10/06/2026;BS06;"Income tax on the dividend paid to the Tax and Customs Board (TSD)";2200,00;2656;1020;O5
+19;30/06/2026;FA01;"Old rental bikes sold: accumulated depreciation derecognised";4000,00;1842;1820;
+20;30/06/2026;BS07;"Old rental bikes sold: cash received";2600,00;1020;1820;I2
+21;30/06/2026;FA01;"Old rental bikes sold: gain on disposal";600,00;1820;3820;
+22;15/09/2026;BS08;"Owner's private holiday flight paid with the company card";780,00;7200;1020;O6
+23;15/09/2026;TAX1;"Income tax on the non-business expense (22/78)";220,00;5830;2570;
+24;10/10/2026;BS09;"Income tax on the non-business expense paid (TSD)";220,00;2570;1020;O6
+25;31/12/2026;SI00;"Sales invoiced during the year (goods and repairs)";96000,00;1210;3100;
+26;31/12/2026;BS10;"Customers paid invoices during the year";90000,00;1020;1210;O1
+27;31/12/2026;INV1;"Cost of goods sold during the year";28000,00;4100;1640;
+28;31/12/2026;BS11;"Supplier invoices for goods paid during the year";26000,00;2310;1020;O2
+29;31/12/2026;BS12;"Rent, electricity and other services paid during the year";18000,00;5020;1020;O2
+30;31/12/2026;PAY1;"Salaries including payroll taxes for the year";30000,00;6010;2610;
+31;31/12/2026;BS13;"Salaries and payroll taxes paid during the year";27500,00;2610;1020;O3
+32;31/12/2026;BS14;"Loan principal repaid during the year";4000,00;2810;1020;F2
+33;31/12/2026;BS15;"Interest on bank loans paid during the year";900,00;8411;1020;O4
+34;31/12/2026;DEP1;"Depreciation for the year";5500,00;7030;1842;
+35;31/12/2026;ACC1;"December electricity, invoice arrives in January";400,00;5031;2310;
+36;31/12/2026;REC1;"Loan instalments due in 2027 moved to short-term loans";5000,00;2810;2120;
+37;;;"";0,00;;;

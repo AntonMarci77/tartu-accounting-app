@@ -1768,5 +1768,11 @@
     "name": "Receivables and liabilities interim account",
     "category": "asset",
     "normal": "D"
+  },
+  {
+    "code": "0000",
+    "name": "Opening balance (technical account)",
+    "category": "equity",
+    "normal": "C"
   }
 ]
