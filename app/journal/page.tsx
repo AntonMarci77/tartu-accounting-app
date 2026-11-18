@@ -182,6 +182,8 @@ export default function JournalPage() {
   }
 
   function loadAssignment(text: string, opts: { suggestedChart?: ChartKey; title?: string }) {
+    const hasWork = entries.some((e) => e.amount || e.debit || e.credit || e.description);
+    if (hasWork && !confirm("Loading an assignment replaces the journal you have now. Continue?")) return;
     if (opts.suggestedChart && opts.suggestedChart !== chart) {
       setChart(opts.suggestedChart);
     }
@@ -309,7 +311,7 @@ export default function JournalPage() {
           <h1 className="text-2xl sm:text-3xl font-bold text-ut-navy">Accounting Journal</h1>
           <p className="text-sm text-slate-600 mt-1">
             Tab or Enter to move from field to field. The T-accounts and statements on this page update with every transaction —
-            watch them shift as you type. Rows that move cash get a cash-flow tag (operating, investing or financing) for the
+            they change as you type. Every row that moves cash also needs a cash-flow tag (operating, investing or financing) for the
             cash flow statement.
           </p>
         </div>
@@ -323,7 +325,7 @@ export default function JournalPage() {
                   : "bg-amber-50 border-amber-200 text-amber-800"
               }`}
             >
-              Cash flow tags: {cashRows.tagged}/{cashRows.total} → statement
+              {cashRows.tagged} of {cashRows.total} cash rows tagged - open the cash flow statement
             </Link>
           )}
           <label className="text-xs text-slate-500">Chart</label>

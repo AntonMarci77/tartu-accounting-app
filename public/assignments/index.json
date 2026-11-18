@@ -2,7 +2,7 @@
   {
     "id": "supilinn-cycles",
     "title": "Workshop - Supilinn Cycles OÜ: from the journal to the cash flow statement, income tax and notes",
-    "description": "A bike shop in Tartu in its second year (fictional). Opening balances are pre-booked. Book the year 2026, tag the cash rows, compute the income tax on the dividend and on the owner's private expense, then read the cash flow statement and write the notes.",
+    "description": "A bike shop in Tartu in its second year (fictional). Opening balances and the routine entries are already booked. You book the 12 rows that matter for the cash flow statement and the income tax, tag every cash row, then read the cash flow statement and write the notes.",
     "student": "05_Workshop_Supilinn_Cycles_STUDENT_simplified.csv",
     "students": {
       "simplified": "05_Workshop_Supilinn_Cycles_STUDENT_simplified.csv",
@@ -10,10 +10,17 @@
     },
     "stages": [
       {
-        "label": "Booked, cash-flow tags blank",
+        "label": "Everything booked, cash-flow tags blank",
         "files": {
           "simplified": "05_Workshop_Supilinn_Cycles_BOOKED_simplified.csv",
           "estonia": "05_Workshop_Supilinn_Cycles_BOOKED_estonian.csv"
+        }
+      },
+      {
+        "label": "Nothing booked (challenge)",
+        "files": {
+          "simplified": "05_Workshop_Supilinn_Cycles_BLANK_simplified.csv",
+          "estonia": "05_Workshop_Supilinn_Cycles_BLANK_estonian.csv"
         }
       }
     ],

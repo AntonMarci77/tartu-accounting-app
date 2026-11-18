@@ -34,9 +34,9 @@ const simplified = [
   { code: "L1", name: "Long-term Bank Loans", category: "liability", normal: "C" },
   { code: "L2", name: "Other Long-term Liabilities", category: "liability", normal: "C" },
   { code: "L3", name: "Short-term Bank Loans", category: "liability", normal: "C" },
-  { code: "L4", name: "Trade Payables", category: "liability", normal: "C" },
+  { code: "L4", name: "Supplier Payables (trade payables)", category: "liability", normal: "C" },
   { code: "L5", name: "Tax Liabilities", category: "liability", normal: "C" },
-  { code: "L6", name: "Payroll & Social Security", category: "liability", normal: "C" },
+  { code: "L6", name: "Payables to Employees & Payroll Taxes", category: "liability", normal: "C" },
   { code: "L7", name: "Other Current Liabilities", category: "liability", normal: "C" },
   { code: "L8", name: "Dividends Payable", category: "liability", normal: "C" },
   { code: "R1", name: "Sales Revenue", category: "revenue", normal: "C" },
@@ -49,7 +49,7 @@ const simplified = [
   { code: "X5", name: "Taxes & Fees", category: "expense", normal: "D" },
   { code: "X6", name: "Other Operating Expenses", category: "expense", normal: "D" },
   { code: "X7", name: "Financial Expenses", category: "expense", normal: "D" },
-  { code: "X8", name: "Income Tax Expense", category: "expense", normal: "D" },
+  { code: "X8", name: "Corporate Income Tax Expense", category: "expense", normal: "D" },
   { code: "OB", name: "Opening Balance (technical account)", category: "equity", normal: "C" },
 ];
 

@@ -91,7 +91,7 @@
   },
   {
     "code": "L4",
-    "name": "Trade Payables",
+    "name": "Supplier Payables (trade payables)",
     "category": "liability",
     "normal": "C"
   },
@@ -103,7 +103,7 @@
   },
   {
     "code": "L6",
-    "name": "Payroll & Social Security",
+    "name": "Payables to Employees & Payroll Taxes",
     "category": "liability",
     "normal": "C"
   },
@@ -181,7 +181,7 @@
   },
   {
     "code": "X8",
-    "name": "Income Tax Expense",
+    "name": "Corporate Income Tax Expense",
     "category": "expense",
     "normal": "D"
   },

@@ -19,8 +19,8 @@ export default function CashFlowPage() {
         <h1 className="text-2xl sm:text-3xl font-bold text-ut-navy">Statement of Cash Flows</h1>
         <p className="text-sm text-slate-600 mt-1 max-w-3xl">
           Built from the journal in two ways. The <b>direct method</b> adds up the cash-flow tags you gave to the rows that move
-          cash. The <b>indirect method</b> starts from operating profit and removes everything that is not operating cash. If both
-          give the same operating cash flow, your classification holds together.
+          cash. The <b>indirect method</b> starts from operating profit and removes everything that is not operating cash. Both
+          methods must give the same cash flow from operating activities.
         </p>
       </div>
       <div className="flex gap-2 no-print">
@@ -83,35 +83,49 @@ export default function CashFlowPage() {
         <>
           <div
             className={`rounded-xl border px-4 py-3 text-sm flex items-start gap-2 ${
-              reconciled
+              reconciled && cf.warnings.length === 0
                 ? "bg-emerald-50 border-emerald-200 text-emerald-800"
                 : "bg-amber-50 border-amber-200 text-amber-900"
             }`}
           >
-            {reconciled ? <CheckCircle2 size={18} className="mt-0.5 shrink-0" /> : <AlertTriangle size={18} className="mt-0.5 shrink-0" />}
-            <div>
+            {reconciled && cf.warnings.length === 0 ? (
+              <CheckCircle2 size={18} className="mt-0.5 shrink-0" />
+            ) : (
+              <AlertTriangle size={18} className="mt-0.5 shrink-0" />
+            )}
+            <div className="space-y-0.5">
               {reconciled ? (
-                <span>
-                  <b>Reconciled.</b> Direct and indirect method give the same cash flow from operating activities (
-                  {formatEUR(cf.indirect.total)}), and the three activities explain the whole change in cash.
-                </span>
+                <p>
+                  <b>Operating total reconciled.</b> The direct and the indirect method give the same cash flow from operating
+                  activities: {formatEUR(cf.indirect.total)}.
+                </p>
               ) : (
-                <span>
-                  <b>Not reconciled yet.</b>{" "}
-                  {!allTagged && (
-                    <>
-                      Cash rows without a cash-flow tag: journal row{cf.direct.untaggedRows.length > 1 ? "s" : ""}{" "}
-                      {cf.direct.untaggedRows.join(", ")}.{" "}
-                    </>
-                  )}
-                  {Math.abs(cf.difference) >= 0.01 && (
-                    <>
-                      Operating cash flow: direct {formatEUR(cf.direct.totals.O)} vs indirect {formatEUR(cf.indirect.total)} -
-                      difference {formatEUR(cf.difference)}. Look for an investing or financing payment tagged as operating
-                      (or the other way round).
-                    </>
-                  )}
-                </span>
+                <p>
+                  <b>Not reconciled yet.</b>
+                </p>
+              )}
+              {!allTagged && (
+                <p>
+                  Journal row{cf.direct.untaggedRows.length > 1 ? "s" : ""} {cf.direct.untaggedRows.join(", ")}{" "}
+                  {cf.direct.untaggedRows.length > 1 ? "move" : "moves"} cash but {cf.direct.untaggedRows.length > 1 ? "have" : "has"} no
+                  cash-flow tag.
+                </p>
+              )}
+              {Math.abs(cf.difference) >= 0.01 && (
+                <p>
+                  Operating cash flow by the direct method is {formatEUR(cf.direct.totals.O)}. By the indirect method it is{" "}
+                  {formatEUR(cf.indirect.total)}. Check whether an investing or financing cash flow is tagged as operating, or an
+                  operating one as investing or financing.
+                </p>
+              )}
+              {reconciled && cf.warnings.length > 0 && (
+                <p>
+                  But {cf.warnings.length} tag{cf.warnings.length > 1 ? "s look" : " looks"} unusual - see the hints below. This check
+                  compares only the operating total; investing and financing you have to check yourself.
+                </p>
+              )}
+              {reconciled && cf.warnings.length === 0 && (
+                <p>All cash rows are tagged and no tag looks unusual. Compare investing and financing with your own expectation.</p>
               )}
             </div>
           </div>
@@ -169,7 +183,7 @@ export default function CashFlowPage() {
           {cf.warnings.length > 0 && (
             <section className="bg-white rounded-2xl shadow-card border border-amber-200 p-4 sm:p-5">
               <h2 className="font-semibold text-ut-navy flex items-center gap-2">
-                <AlertTriangle size={16} className="text-amber-600" /> Check these tags
+                <AlertTriangle size={16} className="text-amber-600" /> Hints: check these tags
               </h2>
               <ul className="mt-2 space-y-1.5 text-sm text-slate-700">
                 {cf.warnings.map((w, i) => (

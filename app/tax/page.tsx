@@ -15,7 +15,7 @@ const ACCOUNTS: Record<Exclude<ChartKey, "super">, Record<string, string>> = {
   simplified: {
     retained: "E3 Retained Earnings",
     divPayable: "L8 Dividends Payable",
-    taxExpense: "X8 Income Tax Expense",
+    taxExpense: "X8 Corporate Income Tax Expense",
     taxLiability: "L5 Tax Liabilities",
     otherTaxExpense: "X5 Taxes & Fees",
     personnel: "X3 Personnel Costs",
@@ -120,16 +120,17 @@ export default function TaxPage() {
           <Line label="Total cost for the company" value={round2(nonBusiness + nbTax)} />
           <Entries rows={[["Income tax on the non-business expense", acc.otherTaxExpense, acc.taxLiability.replace("2656 Dividend income tax payable", "2570 Income tax"), nbTax]]} />
           <p className="text-[11px] text-slate-500">
-            If the private expense is a benefit for an employee or board member, it is taxed as a fringe benefit instead (card 2).
+            This card is for an owner who does not work for the company. If the person is an employee or a member of the management
+            board, the expense is a fringe benefit (card 2) and social tax is added.
           </p>
         </Card>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-4">
-        <Card title="From your journal · the hidden tax on retained earnings" subtitle="disclosed in the notes (ASBG 15, par. 43)">
+        <Card title="From your journal · income tax on a possible distribution" subtitle="shown in the notes (RTJ 15, par. 43)">
           <Line label="Retained earnings incl. profit of the period" value={totals.retainedEarnings} />
-          <Line label={`Maximum income tax if everything is distributed (${EE_TAX.num} %)`} value={maxSplit.tax} strong />
-          <Line label="Maximum net dividend the shareholders could receive" value={maxSplit.net} />
+          <Line label={`Income tax on a possible distribution: ${EE_TAX.num} % of retained earnings`} value={maxSplit.tax} strong />
+          <Line label="Net dividend the owners could receive" value={maxSplit.net} />
           <p className="text-[11px] text-slate-500">
             This tax is not a liability in the balance sheet - it arises only if and when the owners decide to distribute. That is
             exactly why the notes must tell the reader about it. (Company law may restrict the distributable amount further.)

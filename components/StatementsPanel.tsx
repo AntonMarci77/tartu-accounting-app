@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import { findAccount, isOpeningAccount, type Account, type ChartKey } from "@/lib/data/charts";
+import { cashClass, findAccount, isOpeningAccount, type Account, type ChartKey } from "@/lib/data/charts";
 import { formatEUR } from "@/lib/format";
 import type { JournalEntry } from "@/lib/store";
 
@@ -60,6 +60,10 @@ export function StatementsPanel({
   const totalRevenue = sum(revenues);
   const totalExpenses = sum(expenses);
   const profitOrLoss = totalRevenue - totalExpenses;
+  // Operating profit = result before financial items and corporate income tax (not available for the super-simplified chart)
+  const belowOperating = [...revenues, ...expenses].filter((r) => cashClass(r.account.code, chart) === "PL_FIN");
+  const operatingProfit =
+    profitOrLoss - belowOperating.reduce((s, r) => s + (r.account.category === "revenue" ? r.balance : -r.balance), 0);
   const totalLE = totalLiabilities + totalEquity + profitOrLoss;
   const balanced = Math.abs(totalAssets - totalLE) < 0.01;
   const empty = stmt.length === 0;
@@ -69,7 +73,7 @@ export function StatementsPanel({
     <div className={compact ? "space-y-3" : "grid lg:grid-cols-2 gap-4"}>
       <article className="bg-white rounded-2xl shadow-card border border-slate-100 p-4 sm:p-5">
         <header className="border-b border-slate-100 pb-2 mb-3 flex items-center justify-between gap-2">
-          <h2 className="font-semibold text-ut-navy text-sm sm:text-base">Statement of Financial Position</h2>
+          <h2 className="font-semibold text-ut-navy text-sm sm:text-base">Statement of Financial Position <span className="font-normal text-slate-500">(balance sheet)</span></h2>
           {!empty && (
             <span
               className={`text-[10px] px-2 py-0.5 rounded ${
@@ -104,7 +108,7 @@ export function StatementsPanel({
 
       <article className="bg-white rounded-2xl shadow-card border border-slate-100 p-4 sm:p-5">
         <header className="border-b border-slate-100 pb-2 mb-3">
-          <h2 className="font-semibold text-ut-navy text-sm sm:text-base">Statement of Profit or Loss</h2>
+          <h2 className="font-semibold text-ut-navy text-sm sm:text-base">Statement of Profit or Loss <span className="font-normal text-slate-500">(income statement)</span></h2>
         </header>
         {empty ? (
           <Empty />
@@ -112,9 +116,15 @@ export function StatementsPanel({
           <div className="space-y-3 text-sm">
             <Section title="Revenue" lines={revenues} total={totalRevenue} accent />
             <Section title="Expenses" lines={expenses} total={totalExpenses} />
+            {belowOperating.length > 0 && (
+              <div className="flex justify-between text-sm text-slate-700">
+                <span>Operating profit (before financial items and income tax)</span>
+                <span className="tabular-nums">{formatEUR(operatingProfit)}</span>
+              </div>
+            )}
             <div className="pt-2 border-t border-slate-200 flex justify-between text-base font-semibold">
               <span className={profitOrLoss >= 0 ? "text-emerald-700" : "text-rose-700"}>
-                {profitOrLoss >= 0 ? "Profit" : "Loss"} for the period
+                {profitOrLoss >= 0 ? "Net profit" : "Net loss"} for the period
               </span>
               <span
                 className={`tabular-nums ${profitOrLoss >= 0 ? "text-emerald-700" : "text-rose-700"}`}

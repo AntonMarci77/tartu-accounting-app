@@ -38,13 +38,13 @@ const SIZE_LABEL: Record<Size, string> = {
 
 const SIZE_CONTENT: Record<Size, string> = {
   micro:
-    "Abridged annual accounts: balance sheet, income statement and a few notes (ASBG 15, par. 60). No cash flow statement, no statement of changes in equity, management report optional.",
+    "Abridged annual accounts: balance sheet, income statement and a few notes (RTJ 15, par. 60). No cash flow statement, no statement of changes in equity, management report optional.",
   small:
-    "Abridged annual accounts: balance sheet, income statement and the notes listed in ASBG 15, par. 59, plus a management report. Cash flow statement and statement of changes in equity are not required.",
+    "Abridged annual accounts: balance sheet, income statement and the notes listed in RTJ 15, par. 59, plus a management report. Cash flow statement and statement of changes in equity are not required.",
   medium:
-    "Full annual accounts: balance sheet, income statement, cash flow statement, statement of changes in equity and full notes (ASBG 15, par. 5-58), plus a management report.",
+    "Full annual accounts: balance sheet, income statement, cash flow statement, statement of changes in equity and full notes (RTJ 15, par. 5-58), plus a management report.",
   large:
-    "Full annual accounts: balance sheet, income statement, cash flow statement, statement of changes in equity and full notes (ASBG 15, par. 5-58), plus a management report.",
+    "Full annual accounts: balance sheet, income statement, cash flow statement, statement of changes in equity and full notes (RTJ 15, par. 5-58), plus a management report.",
 };
 
 type Scope = "micro" | "small" | "full";
@@ -185,7 +185,7 @@ export default function NotesPage() {
               </label>
             </div>
             <Kv label="Total assets (journal)" value={formatEUR(totals.assets)} />
-            <Kv label="Income for the year (journal)" value={formatEUR(income)} />
+            <Kv label="Income for the year: net sales and other income (journal)" value={formatEUR(income)} />
             <label className="flex items-center justify-between gap-3 text-sm">
               <span className="text-slate-700">Average number of employees</span>
               <input
@@ -213,7 +213,7 @@ export default function NotesPage() {
           <span className="text-xs text-slate-500">Show the notes of:</span>
           {(
             [
-              ["", `the category above (${scope === SCOPE_OF[size] ? scope : SCOPE_OF[size]})`],
+              ["", `this company's category (${SCOPE_OF[size] === "full" ? "full set" : SCOPE_OF[size]})`],
               ["micro", "micro"],
               ["small", "small"],
               ["full", "full set"],
@@ -311,7 +311,7 @@ export default function NotesPage() {
             {show("small", "full") && (
               <div className="grid sm:grid-cols-3 gap-2 mt-2">
                 <NumBox label="Falling due within 12 months" value={loan12} onChange={(v) => set({ loan12: v })} />
-                <Kv label="Between 1 and 5 years" value={formatEUR(loanMid)} boxed />
+                <Kv label="Between 1 and 5 years" value={formatEUR(loanMid, false)} boxed />
                 <NumBox label="After more than 5 years" value={loan5} onChange={(v) => set({ loan5: v })} />
               </div>
             )}
@@ -330,20 +330,21 @@ export default function NotesPage() {
         )}
 
         {show("full") && (
-          <Note no={num()} title="Equity and the contingent income tax liability" who="full">
+          <Note no={num()} title="Equity and income tax on a possible distribution" who="full">
             <AccountTable rows={equity} extra={{ label: "Profit (loss) for the period", opening: 0, closing: totals.profit }} />
             <div className="rounded-lg bg-ut-light/20 border border-ut-light px-3 py-2 mt-2 space-y-0.5">
               <Kv label="Retained earnings at the end of the year (incl. profit for the period)" value={formatEUR(totals.retainedEarnings)} />
               <Kv
-                label={`Income tax payable if all retained earnings were distributed (${EE_TAX.num} %)`}
+                label={`Income tax on a possible distribution: ${EE_TAX.num} % of retained earnings`}
                 value={formatEUR(re.tax)}
                 strong
               />
               <Kv label="Net dividends that could be paid to the shareholders" value={formatEUR(re.net)} />
             </div>
             <p className="text-[11px] text-slate-500 mt-1">
-              Estonia taxes profit when it is distributed ({EE_TAX.num}/{EE_TAX.den} of the net dividend). The tax on undistributed
-              profit is not in the balance sheet, so the notes must show it (ASBG 15, par. 43).
+              Estonia taxes profit when it is distributed. Retained earnings are the gross amount: {EE_TAX.num} % of them is tax and
+              the rest is the net dividend (the same as {EE_TAX.num}/{EE_TAX.den} of the net dividend). This tax is not in the balance
+              sheet, so the notes must show it (RTJ 15, par. 43).
             </p>
           </Note>
         )}
@@ -431,7 +432,7 @@ export default function NotesPage() {
       </div>
 
       <p className="text-xs text-slate-500">
-        Teaching summary of the Estonian requirements (Accounting Act § 15 and § 21; Accounting Standards Board guideline ASBG 15
+        Teaching summary of the Estonian requirements (Accounting Act § 15 and § 21; guideline RTJ 15
         "Disclosures in the notes"). A real set of notes follows the full text of the standard.
       </p>
     </div>
@@ -470,7 +471,7 @@ function Note({ no, title, who, children }: { no: number; title: string; who: st
         <h3 className="font-semibold text-ut-navy">
           Note {no} · {title}
         </h3>
-        <span className="text-[10px] uppercase tracking-wider text-slate-400 no-print">required for: {who}</span>
+        <span className="text-[11px] font-medium rounded-full bg-ut-light/30 text-ut-navy px-2 py-0.5 no-print">required for: {who}</span>
       </header>
       <div className="text-sm text-slate-700 space-y-2">{children}</div>
     </article>
@@ -523,6 +524,7 @@ function NumBox({ label, value, onChange }: { label: string; value: number; onCh
       <input
         type="number"
         value={Number.isFinite(value) ? value : 0}
+        step="any"
         onChange={(e) => onChange(Math.max(0, Number(e.target.value) || 0))}
         className="w-full rounded-md border border-slate-300 bg-slate-50 px-2 py-1.5 text-sm text-right tabular-nums"
       />

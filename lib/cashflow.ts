@@ -39,23 +39,23 @@ export type CfTag = {
 
 export const CF_TAGS: CfTag[] = [
   { id: "O1", section: "O", label: "Receipts from customers", dir: "in" },
-  { id: "O2", section: "O", label: "Payments to suppliers for goods and services", dir: "out" },
-  { id: "O3", section: "O", label: "Payments to and on behalf of employees", dir: "out" },
+  { id: "O2", section: "O", label: "Payments to suppliers", dir: "out" },
+  { id: "O3", section: "O", label: "Payments to employees (incl. payroll taxes)", dir: "out" },
   { id: "O4", section: "O", label: "Interest paid", dir: "out" },
   { id: "O5", section: "O", label: "Income tax paid", dir: "out" },
   { id: "O6", section: "O", label: "Other operating receipts and payments", dir: "any" },
-  { id: "I1", section: "I", label: "Purchase of property, plant and equipment and intangible assets", dir: "out" },
-  { id: "I2", section: "I", label: "Proceeds from sale of property, plant and equipment and intangible assets", dir: "in" },
-  { id: "I3", section: "I", label: "Loans granted and other investments made", dir: "out" },
-  { id: "I4", section: "I", label: "Repayments of loans granted and proceeds from investments", dir: "in" },
+  { id: "I1", section: "I", label: "Purchase of non-current assets", dir: "out" },
+  { id: "I2", section: "I", label: "Sale of non-current assets", dir: "in" },
+  { id: "I3", section: "I", label: "Loans granted, investments made", dir: "out" },
+  { id: "I4", section: "I", label: "Loans repaid to us, investments sold", dir: "in" },
   { id: "I5", section: "I", label: "Interest and dividends received", dir: "in" },
   { id: "F1", section: "F", label: "Loans received", dir: "in" },
-  { id: "F2", section: "F", label: "Repayments of loans and lease liabilities", dir: "out" },
-  { id: "F3", section: "F", label: "Proceeds from issue of shares and owners' contributions", dir: "in" },
+  { id: "F2", section: "F", label: "Loans repaid (and lease payments)", dir: "out" },
+  { id: "F3", section: "F", label: "Share capital paid in", dir: "in" },
   { id: "F4", section: "F", label: "Dividends paid", dir: "out" },
-  { id: "F5", section: "F", label: "Income tax paid on dividends (alternative presentation)", dir: "out" },
-  { id: "F6", section: "F", label: "Interest paid (alternative presentation)", dir: "out" },
-  { id: "X0", section: "X", label: "Transfer between cash accounts (not a cash flow)", dir: "any" },
+  { id: "F5", section: "F", label: "Income tax on dividends (allowed alternative)", dir: "out" },
+  { id: "F6", section: "F", label: "Interest paid (allowed alternative)", dir: "out" },
+  { id: "X0", section: "X", label: "Transfer between cash accounts (no cash flow)", dir: "any" },
 ];
 
 export const CF_SECTION_LABEL: Record<CfSection, string> = {
@@ -223,25 +223,25 @@ export function computeCashFlow(entries: JournalEntry[], chart: ChartKey): CashF
         res.warnings.push({
           no: e.no,
           description: e.description,
-          message: `Counter-account ${name} is a non-current asset or investment - such cash flows are normally investing.`,
+          message: `The other side of this entry is ${name}, a non-current asset or investment. Such cash flows are normally investing.`,
         });
       } else if (other === "FIN" && tag.section !== "F") {
         res.warnings.push({
           no: e.no,
           description: e.description,
-          message: `Counter-account ${name} belongs to borrowings, dividends or equity - such cash flows are normally financing.`,
+          message: `The other side of this entry is ${name} (loans, dividends or equity). Such cash flows are normally financing.`,
         });
       } else if (isWC(other) && (tag.section === "I" || ["F1", "F2", "F3"].includes(tag.id))) {
         res.warnings.push({
           no: e.no,
           description: e.description,
-          message: `Counter-account ${name} is an operating working-capital account - normally an operating cash flow (unless it settles an investing or financing item booked on credit).`,
+          message: `The other side of this entry is ${name}, an operating receivable, inventory or payable. This is normally an operating cash flow.`,
         });
       } else if (other === "PL_FIN" && OPERATING_PLAIN.has(tag.id) && tag.id !== "O6") {
         res.warnings.push({
           no: e.no,
           description: e.description,
-          message: `Counter-account ${name} is a financial item or income tax - consider "Interest paid", "Income tax paid" or "Interest and dividends received".`,
+          message: `The other side of this entry is ${name} (interest or income tax). Consider the tags "Interest paid", "Income tax paid" or "Interest and dividends received".`,
         });
       }
       if ((tag.dir === "in" && cashEffect < 0) || (tag.dir === "out" && cashEffect > 0)) {
@@ -338,8 +338,8 @@ export function computeCashFlow(entries: JournalEntry[], chart: ChartKey): CashF
   const ind = res.indirect;
   ind.profit = profit;
   ind.operatingProfit = opProfit;
-  push(ind.bridge, "profit", "Profit (loss) for the period", profit, true);
-  push(ind.bridge, "tax", "Add back: income tax expense", -incomeTaxExpense);
+  push(ind.bridge, "profit", "Net profit (loss) for the period", profit, true);
+  push(ind.bridge, "tax", "Add back: corporate income tax expense", -incomeTaxExpense);
   push(ind.bridge, "fin", "Add back: financial expenses less financial income", -financialNet);
 
   push(ind.lines, "op", "Operating profit (loss)", opProfit, true, { strong: true });
