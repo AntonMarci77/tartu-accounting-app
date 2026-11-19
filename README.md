@@ -17,6 +17,10 @@ A small Next.js workbook for Erasmus students of the University of Tartu Account
 
 All data lives in `localStorage` — there is no backend; nothing leaves the student's device. Use the export/import CSV buttons in the journal to share work with a classmate or save a copy.
 
+## The "Today" page (one link for a class session)
+
+`/today` is the page behind the QR code on the first slide: the Slido button, the lecture slides and the workshop assignment as PDF (`public/materials/`), and the workshop steps with links into the workbook. Everything for a session is set in `lib/session.ts` (title, date, Slido link and code, file names). `/journal?load=workshop` opens the list of assignments directly.
+
 ## Local development
 
 ```bash

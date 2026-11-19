@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/", label: "Home" },
+  { href: "/today", label: "Today" },
   { href: "/journal", label: "Journal" },
   { href: "/t-accounts", label: "T-accounts" },
   { href: "/reports", label: "Reports" },

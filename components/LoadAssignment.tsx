@@ -30,6 +30,16 @@ export function LoadAssignment({
   onLoad: (csv: string, opts: { suggestedChart?: ChartKey; title?: string }) => void;
 }) {
   const [open, setOpen] = useState(false);
+
+  // /journal?load=workshop (the link on the Today page) opens the list at once
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const q = new URLSearchParams(window.location.search);
+    if (q.has("load")) {
+      setOpen(true);
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  }, []);
   const [assignments, setAssignments] = useState<Assignment[] | null>(null);
   const [loading, setLoading] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);

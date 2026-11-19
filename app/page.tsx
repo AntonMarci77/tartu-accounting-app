@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SESSION } from "@/lib/session";
 import { ArrowRight, Banknote, BookOpen, BookText, ClipboardList, FileText, GraduationCap, Landmark, Layers, ListTree, ScrollText } from "lucide-react";
 
 const tiles = [
@@ -70,6 +71,16 @@ const tiles = [
 export default function HomePage() {
   return (
     <div className="space-y-8">
+      <Link
+        href="/today"
+        className="flex flex-wrap items-center gap-3 rounded-2xl bg-amber-400 text-ut-navy px-5 py-4 shadow-card hover:bg-amber-300 transition"
+      >
+        <span className="rounded-md bg-ut-navy text-white text-xs font-semibold uppercase tracking-wider px-2 py-1">Today</span>
+        <span className="font-semibold flex-1 min-w-[12rem]">
+          {SESSION.title} · {SESSION.date}: live quiz, slides and workshop on one page
+        </span>
+        <span className="inline-flex items-center text-sm font-medium">Open <ArrowRight size={16} className="ml-1" /></span>
+      </Link>
       <section className="rounded-2xl bg-gradient-to-br from-ut-navy via-ut-dark to-ut-medium text-white shadow-card overflow-hidden">
         <div className="px-6 sm:px-10 py-8 sm:py-12">
           <p className="uppercase tracking-widest text-xs sm:text-sm text-ut-light/90">University of Tartu · Accounting 101</p>
